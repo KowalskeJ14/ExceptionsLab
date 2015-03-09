@@ -22,14 +22,12 @@ public class Challenge1 {
         Challenge1 app = new Challenge1();
         
         String fullName = JOptionPane.showInputDialog("Enter full name (use Format: first last):");
-        
         String lastName = app.extractLastName(fullName);
-        
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
     }
     
-    public String extractLastName(String fullName) throws IllegalArgumentException{
+    public String extractLastName(String fullName)throws IllegalArgumentException{
         if(fullName == null || fullName.isEmpty()) {
             throw new IllegalArgumentException();
         }

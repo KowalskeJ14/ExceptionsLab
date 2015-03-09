@@ -13,8 +13,12 @@ package lab2;
 public class Challenge2 {
 
     public static void main(String[] args) {
-        
+        try{
         new InputOutputGui().startConversation();
+        }
+        catch(IllegalArgumentException iae) {
+            System.out.println("caught!");
+        }
     }
     
 }

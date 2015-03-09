@@ -15,7 +15,7 @@ public class InputOutputGui {
         nameService = new NameService();
     }
 
-    public void startConversation() {
+    public void startConversation() throws IllegalArgumentException {
         
         String fullName = JOptionPane.showInputDialog("Enter full name:");
         String lastName = "";

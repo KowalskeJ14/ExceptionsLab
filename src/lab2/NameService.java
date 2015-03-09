@@ -7,7 +7,7 @@ package lab2;
  * @author  Jim Lombardo, jlombardo@wctc.edu
  * @version 1.00
  */
-public class NameService  throws IllegalArgumentException {
+public class NameService {
     private static final int FIRST_NAME_IDX = 0;
     private static final int LAST_NAME_IDX = 1;
     
@@ -22,11 +22,13 @@ public class NameService  throws IllegalArgumentException {
         if(fullName == null || fullName.isEmpty()) {
             throw new IllegalArgumentException();
         }
-        
+        if(!fullName.contains(" ")) {
+            throw new IllegalArgumentException();
+        }
         String[] nameParts = fullName.split(" ");
         return nameParts[nameParts.length - 1];
-    }
     
+    }
     /**
      * Finds and returns the first name from within a full name. Caution: 
      * No validation is performed.
@@ -36,6 +38,9 @@ public class NameService  throws IllegalArgumentException {
      */
     public String extractFirstName(String fullName) {
         if (fullName == null | fullName.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        if(!fullName.contains(" ")) {
             throw new IllegalArgumentException();
         }
         String[] nameParts = fullName.split(" ");
